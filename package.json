@@ -1,0 +1,28 @@
+{
+    "name": "webapp",
+    "version": "1.0.0",
+    "description": "WebApp for the pumgrana project",
+    "main": "main.ts",
+    "scripts": {
+	"test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+	"type": "git",
+	"url": "git+https://github.com/Pumgrana/webapp.git"
+    },
+    "author": "Tristan Djahel",
+    "license": "ISC",
+    "bugs": {
+	"url": "https://github.com/Pumgrana/webapp/issues"
+    },
+    "homepage": "https://github.com/Pumgrana/webapp#readme",
+    
+    "devDependencies" : {
+	"typescript": "~2",
+	"bower" : "~1",
+	"express" : "~4",
+	"graphql" : "~0",
+    "typings" : "~1",
+    "elasticsearch" : "~12"
+    }
+}
