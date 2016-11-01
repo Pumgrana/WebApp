@@ -2,8 +2,11 @@
 
 import * as express_graphql from "express-graphql";
 import * as express from "express";
+import {PumgranaAPI} from './historical';
 
-var app = express();
+let app : express.Application = express();
+
+let API : PumgranaAPI = new PumgranaAPI("");
 
 app.use(express.static('public')); 
 
