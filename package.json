@@ -1,28 +1,36 @@
 {
-    "name": "webapp",
-    "version": "1.0.0",
-    "description": "WebApp for the pumgrana project",
-    "main": "main.ts",
-    "scripts": {
-	"test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-	"type": "git",
-	"url": "git+https://github.com/Pumgrana/webapp.git"
-    },
-    "author": "Tristan Djahel",
-    "license": "ISC",
-    "bugs": {
-	"url": "https://github.com/Pumgrana/webapp/issues"
-    },
-    "homepage": "https://github.com/Pumgrana/webapp#readme",
-    
-    "devDependencies" : {
-	"typescript": "~2",
-	"bower" : "~1",
-	"express" : "~4",
-	"graphql" : "~0",
-    "typings" : "~1",
-    "elasticsearch" : "~12"
-    }
+  "name": "PumgranaDashboard",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://127.0.0.1/api/",
+  "devDependencies": {
+    "react-scripts": "0.8.5"
+  },
+  "dependencies": {
+    "axios": "^0.15.3",
+    "bootstrap": "3",
+    "jquery": "^3.1.1",
+    "react": "^15.4.2",
+    "react-addons-css-transition-group": "^15.4.2",
+    "react-bootstrap": "^0.30.7",
+    "react-burger-menu": "^1.10.10",
+    "react-dom": "^15.4.2",
+    "react-icons": "^2.2.3",
+    "react-motion": "^0.4.7",
+    "react-redux": "^5.0.2",
+    "react-router": "^3.0.0",
+    "redux": "^3.6.0",
+    "redux-burger-menu": "^0.1.0",
+    "redux-logger": "^2.7.4",
+    "redux-saga": "^0.14.3",
+    "redux-thunk": "^2.2.0",
+    "superagent": "^3.3.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "flow": "flow",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
 }
