@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import moodboardApp from "./reducers" // All the reducer
-import { fetchPosts } from "./actions"
+import { } from "./actions"
 // Middleware
 import thunkMiddleware from 'redux-thunk'
 

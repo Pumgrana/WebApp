@@ -1,39 +1,97 @@
-// Register Component
-
+// External imports
 import React from 'react';
 import { Link } from 'react-router'
+var request = require('superagent');
 
 // Styles
 import 'bootstrap/dist/css/bootstrap.css';
 
-const Register = () => {
-    return(
-  <div className="register">
-    <h4>Register - Pumgrana Dashboard</h4>
+// Main class
+class Register extends React.Component
+{
+  constructor(props)
+  {
+    super(props);
+    this.state = { error: null, success: null };
+  }
 
-    <div><Link to="/">Home</Link></div>
+  done(err, res)
+  {
+    if (res.error) return this.setState({ error: [res.error.message], success: null });
 
-    <table className="table table-striped">
-      <tbody>
-        <tr>
-          <td>Email</td>
-          <td><input type="text" name="email" /></td>
-        </tr>
-        <tr>
-          <td>Password</td>
-          <td><input type="password" name="password" /></td>
-        </tr>
-        <tr>
-          <td>Password Again</td>
-          <td><input type="password" name="password_2" /></td>
-        </tr>
-        <tr>
-          <td><input type="submit" value="Register" /></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>)
+    return this.setState({ error: null, success: ["You are registred"] });
+  }
+
+  register()
+  {
+    if (this.refs.password.value != this.refs.password_2.value)
+    {
+      return this.setState({ error: ["Passwords are not equals"], success: null });
+    }
+
+    var data = {
+      email: this.refs.email.value,
+      password: this.refs.password.value
+    }
+    console.log("register", data);
+
+    request
+      .post('api/authentication/register')
+      .send(data)
+      .end(this.done.bind(this));
+  }
+
+  messages()
+  {
+    if (!this.state.error) return null;
+
+    var to_html = (type, e,i) => (<div key={i} className={"alert alert-"+type}>{e}</div>);
+    var html_errors = this.state.error.map(to_html.bind(this, "danger"));
+    var html_successes = this.state.success.map(to_html.bind(this, "success"));
+
+    return <div className="messages">{html_errors} {html_successes}</div>
+  }
+
+  render()
+  {
+    return (
+      <div className="register">
+        <h4>Register - Pumgrana Dashboard</h4>
+
+        <div><Link to="/">Home</Link></div>
+        <br />
+
+        {this.message()}
+
+        <table className="table table-striped">
+          <tbody>
+            <tr>
+              <td>Email</td>
+              <td><input type="email" ref="email" className="form-control" /></td>
+            </tr>
+            <tr>
+              <td>Password</td>
+              <td>
+                <input type="password" ref="password" className="form-control" />
+              </td>
+            </tr>
+            <tr>
+              <td>Password Again</td>
+              <td>
+                <input type="password" ref="password_2" className="form-control" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="submit" value="Register" className="btn btn-primary"
+                       onClick={this.register.bind(this)} />
+              </td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>);
+  }
 }
 
 export default Register

@@ -1,6 +1,7 @@
 PROJECT_NAME := pumgrana-dashboard
 REGISTRY := docker.pumgrana.com
-REGISTRY_NAME := $(REGISTRY)/$(PROJECT_NAME)
+# REGISTRY_NAME := $(REGISTRY)/$(PROJECT_NAME)
+REGISTRY_NAME := $(PROJECT_NAME)
 LATEST := $(REGISTRY_NAME):latest
 
 docker:
@@ -16,5 +17,5 @@ push:
 stop:
 	./stop.sh
 run:
-	docker run -d $(LATEST)
+	docker run -p "3000:80" -d $(LATEST)
 restart: stop run

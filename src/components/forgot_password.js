@@ -8,8 +8,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 const Login = () => {
     return(
-  <div className="login">
-    <h4>Login - Pumgrana Dashboard</h4>
+  <div className="forgot-password">
+    <h4>Forgot Password - Pumgrana Dashboard</h4>
 
     <div><Link to="/">Home</Link></div>
 
@@ -20,11 +20,7 @@ const Login = () => {
           <td><input type="email" name="email" className="form-control" /></td>
         </tr>
         <tr>
-          <td>Password</td>
-          <td><input type="password" name="password" className="form-control" /></td>
-        </tr>
-        <tr>
-          <td><input type="submit" value="Login" className="btn btn-primary" /></td>
+          <td><input type="submit" value="Send" className="btn btn-primary" /></td>
           <td></td>
         </tr>
       </tbody>
