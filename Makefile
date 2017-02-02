@@ -17,5 +17,5 @@ push:
 stop:
 	./stop.sh
 run:
-	docker run -p "3000:80" -d $(LATEST)
+	docker run -d $(LATEST)
 restart: stop run

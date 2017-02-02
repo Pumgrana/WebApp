@@ -24,7 +24,7 @@ class Register extends React.Component
 
   register()
   {
-    if (this.refs.password.value != this.refs.password_2.value)
+    if (this.refs.password.value !== this.refs.password_2.value)
     {
       return this.setState({ error: ["Passwords are not equals"], success: null });
     }
@@ -33,10 +33,9 @@ class Register extends React.Component
       email: this.refs.email.value,
       password: this.refs.password.value
     }
-    console.log("register", data);
 
     request
-      .post('api/authentication/register')
+      .post('api/authentication/auth/')
       .send(data)
       .end(this.done.bind(this));
   }
@@ -61,7 +60,7 @@ class Register extends React.Component
         <div><Link to="/">Home</Link></div>
         <br />
 
-        {this.message()}
+        {this.messages()}
 
         <table className="table table-striped">
           <tbody>
