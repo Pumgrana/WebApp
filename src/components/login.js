@@ -30,7 +30,7 @@ class Login extends React.Component
     }
 
     request
-      .post('api/authentication/auth/sign_in')
+      .post('api/auth/sign_in')
       .send(data)
       .end(this.done.bind(this));
   }

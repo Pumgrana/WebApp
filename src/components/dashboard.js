@@ -26,7 +26,7 @@ class Dashboard extends React.Component
   get_histories()
   {
     request
-      .get('api/user/histories')
+      .get('api/histories')
       .end(this.done.bind(this));
   }
 

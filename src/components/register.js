@@ -35,7 +35,7 @@ class Register extends React.Component
     }
 
     request
-      .post('api/authentication/auth/')
+      .post('api/auth/')
       .send(data)
       .end(this.done.bind(this));
   }
