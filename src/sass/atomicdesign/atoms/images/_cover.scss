@@ -1,0 +1,17 @@
+.serie-item-thumbnail{
+    width: 200px;
+    height: 300px;
+}
+
+.editserie-profile{
+    display:flex;
+    flex-direction: row;
+    margin-top: -9rem;
+    div.cover-image-container{
+        @extend .serie-item-thumbnail;
+        @include crossBrowser(box-shadow, $depth2);
+        .cover-image{
+            width: 100%;
+        }
+    }
+}

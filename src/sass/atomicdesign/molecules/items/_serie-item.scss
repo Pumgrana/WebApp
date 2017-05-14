@@ -1,0 +1,15 @@
+@import "../../../mixins/mixins";
+
+.serie-item{
+    display:inline-block;
+    width:200px;
+    background:#222222;
+    @include crossBrowser(box-shadow , $depth3);
+    .serie-item-description{
+        padding: 1em;
+    }
+    .serie-item-control{
+        padding: 0 1em 1em 1em;
+        overflow:hidden;
+    }
+}

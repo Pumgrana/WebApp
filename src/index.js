@@ -5,6 +5,11 @@ import { Router, Route, browserHistory } from 'react-router'
 import { Provider } from 'react-redux'
 import store  from './store'
 
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+
+injectTapEventPlugin();
+
 // Components
 import Home from './components/home.js';
 import Dashboard from './components/dashboard.js';
@@ -14,19 +19,18 @@ import Register from './components/register.js';
 import Login from './components/login.js';
 import ForgotPassword from './components/forgot_password.js';
 
+import '../public/css/main.css';
+
 // Routes
 ReactDOM.render(
-  <Provider store={store}>
-  <Router history={browserHistory}>
-
-    <Route path="/" component={Home}></Route>
-    <Route path="/dashboard" component={Dashboard}></Route>
-
-    <Route path="/register" component={Register}></Route>
-    <Route path="/login" component={Login}></Route>
-    <Route path="/forgot-password" component={ForgotPassword}></Route>
-
-  </Router>
-  </Provider>,
-  document.getElementById('root')
+    <Provider store={store}>
+        <Router history={browserHistory}>
+            <Route path="/" component={Home}></Route>
+            <Route path="/dashboard" component={Dashboard}></Route>
+            <Route path="/register" component={Register}></Route>
+            <Route path="/login" component={Login}></Route>
+            <Route path="/forgot-password" component={ForgotPassword}></Route>
+        </Router>
+    </Provider>,
+  document.getElementById('app')
 );

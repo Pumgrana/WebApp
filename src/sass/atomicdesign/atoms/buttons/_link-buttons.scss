@@ -1,0 +1,31 @@
+@import "buttons";
+
+.link-button{
+    @extend %button;
+    border: none;
+    background:$blue;
+    font-size: $fontSmall;
+    text-transform: uppercase;
+    padding: 0;
+    &:hover{
+        background: $lightBlue;
+        @include crossBrowser(transition, background $cubicBezier4);
+    }
+    a{
+        display:block;
+        padding: 0.2em 1.6em;
+        color: $white;
+        text-decoration: none;
+    }
+}
+.add-new-serie{
+    align-self: center;
+    max-width: 200px;
+    a{
+        width: 100%;
+    }
+}
+
+.nav-link-serielist{
+    @extend .add-new-serie;
+}

@@ -1,0 +1,33 @@
+// CONFIGURATION
+@import "functions/functions";
+@import "mixins/mixins";
+@import "mixins/grid-mixins";
+@import "variables/breakpoints";
+@import "variables/grid";
+@import "variables/colors";
+@import "variables/effects";
+@import "variables/fonts";
+
+// GENERAL STYLES
+@import "base/reset";
+@import "base/general";
+@import "base/grid-system";
+
+// Atomic Design
+@import "atomicdesign/atoms/dividers/dividers";
+@import "atomicdesign/atoms/images/cover";
+@import "atomicdesign/atoms/images/gif-image";
+@import "atomicdesign/atoms/images/preview";
+@import "atomicdesign/atoms/texts/titles";
+@import "atomicdesign/atoms/texts/texts";
+@import "atomicdesign/atoms/buttons/item-buttons";
+@import "atomicdesign/atoms/buttons/link-buttons";
+@import "atomicdesign/atoms/buttons/nav-buttons";
+@import "atomicdesign/atoms/buttons/form-buttons";
+@import "atomicdesign/atoms/buttons/modal-buttons";
+@import "atomicdesign/molecules/navigation/navigation";
+@import "atomicdesign/molecules/footer/footer";
+@import "atomicdesign/molecules/items/serie-item";
+@import "atomicdesign/organisms/forms/forms";
+// @import "atomicdesign/templates/";
+// @import "atomicdesign/pages/";

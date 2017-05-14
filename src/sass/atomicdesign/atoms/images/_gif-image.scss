@@ -1,0 +1,9 @@
+.gif-container{
+    max-height: 1035px;
+    overflow:hidden;
+    padding: 0 1rem;
+    .gif-image{
+        width: 100%;
+        border: 1px solid $grey1E;
+    }
+}

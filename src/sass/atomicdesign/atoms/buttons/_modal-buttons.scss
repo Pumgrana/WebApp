@@ -1,0 +1,26 @@
+@import "buttons";
+
+.cancel-button{
+    @extend %button;
+    border: none;
+    margin-right: 1rem;
+    padding: 0.2em 1.6em;
+    background:$blue;
+    font-size: $fontSmall;
+    color: $white;
+    text-transform: uppercase;
+    &:hover{
+        background: $lightBlue;
+        @include crossBrowser(transition, background $cubicBezier4);
+    }
+}
+.serie-delete-button{
+    @extend .cancel-button;
+    float:right;
+    margin-right: 0;
+    background:$red;
+    &:hover{
+        background: $lightRed;
+        @include crossBrowser(transition, background $cubicBezier4);
+    }
+}

@@ -1,0 +1,35 @@
+@import "buttons";
+
+button.nav-button{
+    @extend %button;
+    border: none;
+    background: none;
+    font-size: $fontSmall;
+    padding: 0;
+    &:hover{
+        @include crossBrowser(transition, background $cubicBezier4);
+    }
+    a.serie-list-link{
+        display: block;
+        width: 100%;
+        padding: 0.2em 0.3em;
+        color: $white;
+        text-decoration: none;
+        &:hover{
+            background: lighten($grey2, 15%);
+        }
+        &.active{
+            background: $grey2;
+        }
+    }
+}
+.add-new-serie{
+    align-self: center;
+    max-width: 200px;
+    a.add-new-serie-link{
+        width: 100%;
+    }
+}
+.nav-link-serielist{
+    @extend .add-new-serie;
+}

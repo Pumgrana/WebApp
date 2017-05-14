@@ -1,0 +1,64 @@
+@import "buttons";
+
+input[type=file]{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    & + label {
+        @extend %button;
+        @extend .raised-button;
+        padding: 0.2em 1.6em;
+        background:$blue;
+        font-size: $fontBase;
+        color: $white;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+}
+
+#serie-image{
+    & + label {
+        width: 100%;
+    }
+}
+
+input[type=submit], button[type=submit]{
+    @extend %button;
+    @extend .raised-button;
+    padding: 0.2rem;
+    background:$blue;
+    font-size: $fontBase;
+    color: $white;
+    text-transform: uppercase;
+    text-align:center;
+    &.form-create-button{
+        width: 100px;
+    }
+    &.form-save-button{
+        width: 100px;
+    }
+}
+
+.form-serie-infos{
+    .control-label{
+        margin: 0.8rem 2rem 0.8rem 0;
+        padding: 0.5rem 0;
+        text-transform: uppercase;
+        font-weight: 500;
+        color:$white;
+    }
+    .form-serie-input{
+        margin: 0.8rem 0;
+        border: 1px solid $grey1E;
+        padding: 0.5rem 1rem;
+        background: none;
+        color: $white;
+        &#serieSeason{
+        }
+        &#serieEpisode{
+        }
+    }
+}

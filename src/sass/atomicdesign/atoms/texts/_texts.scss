@@ -1,0 +1,41 @@
+@import "variables/colors";
+@import "variables/fonts";
+p{
+    color:$grey;
+    padding: 0.5rem 1rem;
+}
+strong{
+    font-weight: 700;
+}
+.serie-item-season{
+    font-size: $fontSmall;
+    color: $grey;
+    padding: 0;
+    span{
+        font-weight: 500;
+    }
+}
+.serie-item-episode{
+    @extend .serie-item-season;
+}
+form.upload-image{
+    .upload-indication{
+        width: 100%;
+        padding: 0.5rem 1rem 0;
+        text-align:center;
+        font-size: $fontSmall;
+    }
+}
+.editserie-profile{
+    p.serie-item-season, p.serie-item-episode{
+        width: 100%;
+        padding: 0.5rem 0;
+        color: $white;
+        font-size: $fontMedium;
+    }
+}
+.footer-wrap{
+    .footer-line{
+        float:right;
+    }
+}

@@ -1,0 +1,29 @@
+//  Black and White
+$black: #000;
+$lightBlack10: #101010;
+$lightBlack22: #222222;
+$white: #fff;
+$white75: rgba(255, 255, 255, 0.75);
+$grey:#c3c3c3;
+$grey1E: #1E1E1E;
+$grey2: rgba(158, 158, 158, 0.2);
+$black87: rgba($black, .87);
+$black54: rgba($black, .54);
+$black45: rgba($black, .45);
+$black26: rgba($black, .26);
+$black12: rgba($black, .12);
+
+
+// Color
+$pumRed: #f94a4d;
+$pumGrey: #f9f9f9;
+$dark-blue: #212228;
+$blue: #015B7E;
+$red: #9A0003;
+$lightBlue: lighten($blue, 5%);
+$lightRed: lighten($red, 5%);
+$blueCode: lighten($blue, 60%);
+
+// Fonts Colors
+$fontColorBase: #333;
+$fontColor: rgba(255,255,255,.3);

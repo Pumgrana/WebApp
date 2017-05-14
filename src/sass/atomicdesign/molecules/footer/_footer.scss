@@ -1,0 +1,15 @@
+@import "../../../mixins/mixins";
+@import "../../../base/placeholders";
+@import "../../../variables/colors";
+
+.footer-dv{
+    position: relative;
+    bottom: 0;
+    padding: 1.5rem 0;
+    background: $lightBlack10;
+    @include crossBrowser(box-shadow , $Invertdepth3);
+}
+.footer-wrap{
+    @extend %center;
+    overflow:hidden;
+}

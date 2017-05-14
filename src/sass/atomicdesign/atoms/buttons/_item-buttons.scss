@@ -1,0 +1,25 @@
+@import "buttons";
+
+.serie-item-edit-button{
+    @extend %button;
+    float:left;
+    border: none;
+    padding: 0.2em 1.6em;
+    background:$blue;
+    font-size: $fontSmall;
+    color: $white;
+    text-transform: uppercase;
+    &:hover{
+        background: $lightBlue;
+        @include crossBrowser(transition, background $cubicBezier4);
+    }
+}
+.serie-item-delete-button{
+    @extend .serie-item-edit-button;
+    float:right;
+    background:$red;
+    &:hover{
+        background: $lightRed;
+        @include crossBrowser(transition, background $cubicBezier4);
+    }
+}

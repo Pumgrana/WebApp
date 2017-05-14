@@ -1,0 +1,19 @@
+// fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+$fontDefault: 'Roboto', Helvetica, sans-serif !default;
+$fontIcon: 'icons' !default;
+
+// Defining font sizes
+$fontSmall: 13px !default;
+$fontBase: 16px  !default;
+$fontBasePlus: 20px  !default;
+$fontMedium: 24px !default;
+$fontLarge: 28px !default;
+$fontXLarge: 36px !default;
+$fontXXLarge: 48px !default;
+$fontXXXLarge: 52px !default;
+$fontHuge: 62px !default;
+
+// line height
+$lineHeight: 26px !default;
+$TitlelineHeight: 1.5em !default;

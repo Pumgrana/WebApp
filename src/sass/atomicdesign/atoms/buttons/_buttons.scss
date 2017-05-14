@@ -1,0 +1,14 @@
+@import "../../../variables/colors";
+@import "../../../variables/fonts";
+@import "../../../variables/effects";
+@import "./buttons-placeholders";
+
+.raised-button {
+    @include crossBrowser(box-shadow, $depth3);
+    @include crossBrowser(transition, box-shadow $cubicBezier25);
+}
+.button-depth {
+    @extend %button;
+    @include crossBrowser(box-shadow, $depth1);
+    @include crossBrowser(transition, box-shadow $cubicBezier25,background-color $cubicBezier25);
+}

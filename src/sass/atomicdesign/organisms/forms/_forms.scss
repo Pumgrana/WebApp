@@ -1,0 +1,133 @@
+#upload-form{
+    .cover-image-inner{
+        width:200px;
+        text-align:center;
+        input[type=file]{
+            width: 100%;
+        }
+        input[type=submit]{
+            width: 100px;
+        }
+        .img-preview{
+            width: 200px;
+            img{
+                width: 100%;
+            }
+        }
+        #status-image{
+            display:block;
+            width: 100%;
+            min-height: 35px;
+            padding-top: 0.5rem;
+            font-size: $fontSmall;
+            color: $grey;
+        }
+    }
+}
+#upload-bg-form{
+    text-align: center;
+    margin-left: 0;
+    input[type=file]{
+        width: 100%;
+    }
+    input[type=submit]{
+        width: 100px;
+    }
+    .img-bg-preview{
+        width: 100%;
+        img{
+            width: 100%;
+        }
+    }
+    #status-image-bg{
+        display:block;
+        width: 100%;
+        min-height: 35px;
+        padding-top: 0.5rem;
+        font-size: $fontSmall;
+        color: $grey;
+    }
+}
+
+.form-serie-infos{
+    padding: 3rem 1rem 2rem;
+    .ui-spinner{
+        margin-left: 0;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        padding: 0;
+        vertical-align: middle;
+    }
+    div.form-serie-control{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 1rem;
+    }
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.ui-button-icon-only .ui-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -8px;
+    margin-left: -8px;
+}
+.ui-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.ui-spinner-input {
+    border: none;
+    background: none;
+    color: inherit;
+    padding: .222em 0;
+    margin: .2em 0;
+    vertical-align: middle;
+    margin-left: .4em;
+    margin-right: 2em;
+}
+.ui-spinner{
+    #serieSeason{
+        width: 100%;
+    }
+    #serieEpisode{
+        width: 100%;
+    }
+    .ui-spinner-button.ui-corner-tr {
+        display: block;
+        width: 16px;
+        height: 16px;
+        z-index: 3000;
+        position: absolute;
+        top:20px;
+        right: 5px;
+        &:after{
+            @include triangle('up', 5px, 10px, $grey2);
+            position: absolute;
+        }
+    }
+    .ui-spinner-button.ui-corner-br {
+        display: block;
+        width: 16px;
+        height: 16px;
+        z-index: 3000;
+        position: absolute;
+        bottom:15px;
+        right: 5px;
+        &:after{
+            @include triangle('down', 5px, 10px, $grey2)
+            position: absolute;
+        }
+    }
+}

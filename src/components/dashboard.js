@@ -1,37 +1,40 @@
 // External imports
 import React from 'react';
-import { Link } from 'react-router'
+import { Link } from 'react-router';
 var request = require('superagent');
 
-// Styles
-import 'bootstrap/dist/css/bootstrap.css';
+import classNames from 'classnames/bind';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
+import AppBar from 'material-ui/AppBar';
+import Drawer from 'material-ui/Drawer';
+import MenuItem from 'material-ui/MenuItem';
+import {List, ListItem} from 'material-ui/List';
 
 // Main class
-class Dashboard extends React.Component
-{
-  constructor(props)
-  {
+export default class Dashboard extends React.Component {
+  constructor(props) {
     super(props);
     this.state = { error: null, success: null, histories: [] };
     this.get_histories();
+    this.state = {open: false};
+    this.handleToggle = this.handleToggle.bind(this)
+    this.handleClose = this.handleClose.bind(this)
   }
 
-  done(err, res)
-  {
+  done(err, res) {
     if (res.error) return this.setState({error: [res.error.message], success: null});
 
     return this.setState({ histories: res.body });
   }
 
-  get_histories()
-  {
+  get_histories() {
     request
       .get('api/histories')
       .end(this.done.bind(this));
   }
 
-  messages()
-  {
+  messages() {
     if (!this.state.error) return null;
 
     var to_html = (type, e,i) => (<div key={i} className={"alert alert-"+type}>{e}</div>);
@@ -46,19 +49,64 @@ class Dashboard extends React.Component
     return this.state.histories;
   }
 
-  render()
-  {
+  handleToggle() {
+    this.setState({open: !this.state.open});
+  }
+
+  handleClose() {
+      this.setState({open: true});
+  }
+
+  render(){
+    const styleAppBar = {
+        background: '#f94a4d'
+    }
+    const styleDrawer = {
+        zIndex: '1000',
+        position: 'relative',
+        display: 'inline-block'
+    }
     return(
-      <div className="dashboard">
-        <h4>History - Pumgrana Dashboard</h4>
+        <MuiThemeProvider>
+            <div className="dashboard">
+                <AppBar
+                    className={classNames('app-bar', {'expanded': this.state.open})}
+                    title="Navigation history"
+                    iconClassNameRight="muidocs-icon-navigation-expand-more"
+                    style={styleAppBar}
+                    onLeftIconButtonTouchTap={this.handleToggle}
+                />
+                <div className="dashboard__content">
+                    <Drawer
+                        docked={true}
+                        open={this.state.open}
+                        onRequestChange={(open) => this.setState({open})}
+                        zDepth={0}
+                        containerStyle={styleDrawer}>
+                        <MenuItem>Menu Item</MenuItem>
+                        <MenuItem>Menu Item 2</MenuItem>
+                    </Drawer>
+                    <div className={classNames('dashboard__history-list app-content', {'expanded': this.state.open})}>
+                        <h4>History - Pumgrana Dashboard</h4>
 
-        <div><Link to="/">Home</Link></div>
+                        <div><Link to="/">Home</Link></div>
+                        <List>
+                            <ListItem primaryText="Sent mail" />
+                            <ListItem primaryText="Drafts" />
+                            <ListItem
+                              primaryText="Inbox"
+                              initiallyOpen={true}
+                              primaryTogglesNestedList={true}
+                            />
+                          </List>
 
-        {this.messages()}
+                        {this.messages()}
 
-        {this.histories()}
-      </div>);
+                        {this.histories()}
+                    </div>
+                </div>
+            </div>
+        </MuiThemeProvider>
+    )
   }
 }
-
-export default Dashboard

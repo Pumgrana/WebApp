@@ -1,0 +1,6 @@
+%button {
+    border: none;
+    outline: none;
+    text-decoration: none;
+    @include crossBrowser(transition, all $cubicBezier4);
+}

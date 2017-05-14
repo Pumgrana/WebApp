@@ -1,0 +1,11 @@
+//_____________________ BREAKPOINTS_______________________
+// Inspired by Hugo Giraudel Post => https://www.sitepoint.com/managing-responsive-breakpoints-sass/
+
+// Small screen
+$break-small: 'max-width:767px';
+// Medium screen
+$break-medium: 'max-width:1140px';
+// large screen
+$break-large: 'min-width:1141px';
+// Extra large screen
+$break-wide: 'min-width:1600px';
