@@ -6,7 +6,6 @@ import { Link } from 'react-router';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import AppBar from 'material-ui/AppBar';
-import RaisedButton from 'material-ui/RaisedButton';
 
 export default class Home extends React.Component{
     render() {
@@ -27,8 +26,6 @@ export default class Home extends React.Component{
                     <div><Link to="/login">Login</Link></div>
                     <div><Link to="/forgot-password">Forgot password</Link></div>
                     <div><Link to="/dashboard">Dashboard</Link></div>
-
-                    <RaisedButton label="Default" />
                 </div>
             </MuiThemeProvider>
         )

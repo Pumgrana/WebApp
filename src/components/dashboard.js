@@ -83,22 +83,17 @@ export default class Dashboard extends React.Component {
                         onRequestChange={(open) => this.setState({open})}
                         zDepth={0}
                         containerStyle={styleDrawer}>
-                        <MenuItem>Menu Item</MenuItem>
-                        <MenuItem>Menu Item 2</MenuItem>
+                        <MenuItem>Here date</MenuItem>
+                        <MenuItem>Here date</MenuItem>
                     </Drawer>
                     <div className={classNames('dashboard__history-list app-content', {'expanded': this.state.open})}>
                         <h4>History - Pumgrana Dashboard</h4>
 
                         <div><Link to="/">Home</Link></div>
                         <List>
-                            <ListItem primaryText="Sent mail" />
-                            <ListItem primaryText="Drafts" />
-                            <ListItem
-                              primaryText="Inbox"
-                              initiallyOpen={true}
-                              primaryTogglesNestedList={true}
-                            />
-                          </List>
+                            <ListItem primaryText="Item Title" />
+                            <ListItem primaryText="Item Title" />
+                        </List>
 
                         {this.messages()}
 
